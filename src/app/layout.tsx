@@ -1,4 +1,4 @@
-import Layout from "@/components/layout/MainLayout";
+import { Layout } from "@/components/layout/Layout";
 import "./globals.css";
 
 export default function RootLayout({
@@ -10,6 +10,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Layout>{children}</Layout>
+        {/* {children} */}
       </body>
     </html>
   );

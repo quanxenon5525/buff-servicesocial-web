@@ -1,9 +1,21 @@
 import React from "react";
 
-export default function Footer() {
+export const Footer = () => {
   return (
-    <div className="container-fluid bg-danger bg-gradient text-center mt-2">
+    <div
+      style={{
+        position: "absolute",
+        bottom: 0,
+        width: "100%",
+        height: "auto",
+        backgroundColor: "#f0f0f0",
+        textAlign: "center",
+        color: "black",
+      }}
+    >
       2023 @ Xeno copyright
     </div>
   );
-}
+};
+
+export default Footer;
