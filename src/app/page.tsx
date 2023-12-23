@@ -1,9 +1,44 @@
+"use client";
+import Dashboard from "@/components/layout/Dashboard";
+import MainLayout from "@/components/layout/MainLayout";
+import { Tabs, TabsProps } from "antd";
+import Link from "next/link";
+
+const tabs: TabsProps["items"] = [
+  {
+    key: "1",
+    label: "Tạo đơn hàng",
+    children: "hi",
+  },
+  {
+    key: "2",
+    label: "Lịch sử đơn hàng",
+    children: "he",
+  },
+];
+
 export default function Home() {
+  const onChange = (key: string) => {
+    console.log(key);
+  };
+
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-center	text-lime-400">
-        Hello world!
-      </h1>
-    </div>
+    <MainLayout>
+      <Dashboard
+        breadcrumb
+        items={[
+          { title: <Link href="/">Trang chủ</Link> },
+          { title: "Tăng like bài viết" },
+        ]}
+      >
+        <Tabs
+          className="ml-5"
+          type="card"
+          defaultActiveKey="1"
+          items={tabs}
+          onChange={onChange}
+        />
+      </Dashboard>
+    </MainLayout>
   );
 }
