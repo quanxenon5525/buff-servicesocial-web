@@ -1,22 +1,22 @@
 "use client";
-import React, { useState } from "react";
 import {
-  DesktopOutlined,
   FileOutlined,
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import { Breadcrumb, Layout, Menu, Slider, theme } from "antd";
-import Image from "next/image";
-import { Box, Button } from "@mui/material";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import LoginIcon from "@mui/icons-material/Login";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
+import { Box, Button, useMediaQuery } from "@mui/material";
+import type { MenuProps } from "antd";
+import { Layout, Menu, Spin, theme } from "antd";
 import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { ButtonCustom } from "../buttons";
+import Link from "next/link";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -55,81 +55,119 @@ export default function MainLayout({ children }: any) {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <Layout style={{ minHeight: "100vh" }}>
-      <Sider
-        collapsible
-        width="300"
-        collapsedWidth="100"
-        breakpoint="md"
-        collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
-      >
-        <div className="text-center text-2xl text-zinc p-5">BASIC UI</div>
-        <Menu
-          theme="dark"
-          defaultSelectedKeys={["1"]}
-          mode="inline"
-          items={items}
-        />
-      </Sider>
-      <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
-          <Box
-            style={{
-              padding: 15,
-              display: "flex",
-              justifyContent: "flex-end",
-              gap: 10,
-            }}
+    <>
+      {!loading ? (
+        <Layout style={{ minHeight: "100vh" }}>
+          <Sider
+            collapsible
+            width="300"
+            collapsedWidth="100"
+            breakpoint="md"
+            collapsed={collapsed}
+            onCollapse={(value) => setCollapsed(value)}
           >
-            <Button
-              variant="outlined"
-              color="error"
-              startIcon={<AttachMoneyIcon />}
-              onClick={() => {
-                router.push("/priceList");
+            <div className="text-center text-2xl text-zinc p-5">
+              <Link href="/">Basic UI</Link>
+            </div>
+            <Menu
+              theme="dark"
+              defaultSelectedKeys={["1"]}
+              mode="inline"
+              items={items}
+            />
+          </Sider>
+          <Layout>
+            <Header style={{ padding: 0, background: colorBgContainer }}>
+              <Box
+                style={{
+                  padding: 15,
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  gap: 10,
+                }}
+              >
+                <ButtonCustom
+                  variant="outlined"
+                  color="error"
+                  startIcon={<AttachMoneyIcon />}
+                  onClick={() => {
+                    router.push("/priceList");
+                  }}
+                >
+                  Bảng giá
+                </ButtonCustom>
+                <ButtonCustom
+                  variant="outlined"
+                  color="primary"
+                  startIcon={<LoginIcon />}
+                  onClick={() => {
+                    router.push("/login");
+                  }}
+                >
+                  Đăng nhập
+                </ButtonCustom>
+                <ButtonCustom
+                  variant="outlined"
+                  color="secondary"
+                  startIcon={<PersonAddAltIcon />}
+                  onClick={() => {
+                    router.push("/sign-up");
+                  }}
+                >
+                  Đăng ký
+                </ButtonCustom>
+              </Box>
+            </Header>
+            {children}
+            <Footer
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                position: "fixed",
+                bottom: 0,
+                width: "100%",
+                height: 0,
+                backgroundColor: "white",
+                textAlign: "center",
               }}
             >
-              Bảng giá
-            </Button>
-            <Button
-              variant="outlined"
-              color="primary"
-              startIcon={<LoginIcon />}
-              onClick={() => {
-                router.push("/login");
-              }}
-            >
-              Đăng nhạp
-            </Button>
-            <Button
-              variant="outlined"
-              color="secondary"
-              startIcon={<PersonAddAltIcon />}
-              onClick={() => {
-                router.push("/signup");
-              }}
-            >
-              Đăng ký
-            </Button>
-          </Box>
-        </Header>
-        {children}
-        <Footer
+              Xeno ©2023
+            </Footer>
+          </Layout>
+        </Layout>
+      ) : (
+        <Spin
+          tip="Vui lòng đợi trong giây lát"
+          size="large"
           style={{
-            position: "absolute",
-            bottom: 0,
-            width: "89%",
-            height: "auto",
-            backgroundColor: "#f0f0f0",
-            textAlign: "center",
-            lineHeight: "100%",
+            display: "flex",
+            justifyContent: "center",
+            padding: 10,
+            marginTop: "20%",
           }}
         >
-          Web ao ©2023 Created by Xeno
-        </Footer>
-      </Layout>
-    </Layout>
+          <div className="content" />
+        </Spin>
+      )}
+    </>
   );
 }
