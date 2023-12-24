@@ -1,6 +1,4 @@
 import { Breadcrumb } from "antd";
-import React from "react";
-
 type DashboardProps = {
   children: any;
   breadcrumb?: any;

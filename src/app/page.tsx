@@ -1,43 +1,226 @@
 "use client";
 import Dashboard from "@/components/layout/Dashboard";
 import MainLayout from "@/components/layout/MainLayout";
-import { Tabs, TabsProps } from "antd";
-import Link from "next/link";
+import { Box, Stack, Typography } from "@mui/material";
+import { Avatar, Breadcrumb } from "antd";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import CardList from "@/components/CardList";
 
-const tabs: TabsProps["items"] = [
+const cardData = [
   {
-    key: "1",
-    label: "Tạo đơn hàng",
-    children: "hi",
+    title: "TĂNG LIKE BÀI VIẾT FB 1",
+    description: "Like bất kì bài viết công khai nào với chi phí rẻ",
+    icon: <PersonOutlineIcon />,
+    href: "like-post-fb",
   },
   {
-    key: "2",
-    label: "Lịch sử đơn hàng",
-    children: "he",
+    title: "TĂNG SHARE BÀI VIẾT FB",
+    description: "Bài viết tiếp cận được nhiều người hơn",
+    icon: <PersonOutlineIcon />,
+    href: "share-post-fb",
+  },
+  {
+    title: "TĂNG COMMENT FB",
+    description: "Seeding bán hàng, tăng độ uy tín cho bài viết",
+    icon: <PersonOutlineIcon />,
+    href: "comment-post-fb",
+  },
+  {
+    title: "TĂNG LIKE CHO BÌNH LUẬN FB",
+    description: "Hack like cmt cho các cuộc bình chọn",
+    icon: <PersonOutlineIcon />,
+    href: "like-cmt-fb",
+  },
+  {
+    title: "TĂNG VIEW LIVESTREAM INSTAGRAM",
+    description: "Thêm hàng ngàn lượt view livestream tạo thương hiệu",
+    icon: <PersonOutlineIcon />,
+    href: "/",
+  },
+  {
+    title: "TĂNG FOLLOWER CHO FB",
+    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
+    icon: <PersonOutlineIcon />,
+    href: "/",
+  },
+  {
+    title: "TĂNG FOLLOWER CHO FB",
+    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
+    icon: <PersonOutlineIcon />,
+    href: "/",
+  },
+  {
+    title: "TĂNG FOLLOWER CHO FB",
+    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
+    icon: <PersonOutlineIcon />,
+    href: "/",
+  },
+  {
+    title: "TĂNG FOLLOWER CHO FB",
+    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
+    icon: <PersonOutlineIcon />,
+    href: "/",
+  },
+  {
+    title: "TĂNG FOLLOWER CHO FB",
+    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
+    icon: <PersonOutlineIcon />,
+    href: "/",
   },
 ];
 
 export default function Home() {
-  const onChange = (key: string) => {
-    console.log(key);
-  };
-
   return (
     <MainLayout>
-      <Dashboard
-        breadcrumb
-        items={[
-          { title: <Link href="/">Trang chủ</Link> },
-          { title: "Tăng like bài viết" },
-        ]}
-      >
-        <Tabs
-          className="ml-5"
-          type="card"
-          defaultActiveKey="1"
-          items={tabs}
-          onChange={onChange}
-        />
+      <Dashboard breadcrumb>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: 20,
+          }}
+        >
+          <Box
+            sx={{
+              width: "95%",
+              border: "0.5px solid black",
+              padding: "15px",
+              display: "flex",
+              flexDirection: "row",
+              gap: 3,
+            }}
+          >
+            <Avatar shape="square" size={64} icon={<PersonOutlineIcon />} />
+            <Stack>
+              <Typography
+                variant="subtitle1"
+                className="text-black"
+                fontWeight="bold"
+              >
+                Phạm Thành Nhân
+              </Typography>
+              <Typography variant="caption" className="text-black">
+                Thành viên <b className="text-red-500">cấp 10</b>
+              </Typography>
+              <Typography variant="caption" className="text-black">
+                Số dư: 999.999.999đ
+              </Typography>
+            </Stack>
+          </Box>
+          <Box
+            sx={{
+              width: "95%",
+              border: "0.5px solid black",
+              padding: "15px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 1,
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              className="text-black"
+              fontWeight="bold"
+            >
+              BuffAcc.vn - Ổn định, hiệu quả, lâu dài
+            </Typography>
+            <Typography variant="caption" className="text-black">
+              BuffAcc.vn hoạt động từ năm 2018 đến nay, với phương châm xây dựng
+              một hệ thống mang đến lợi ích cho người sử dụng. Chúng tôi chỉ
+              cung cấp các dịch vụ như tăng like, comment, share, view, tăng
+              mắt, likepage, follow, Facebook, Tiktok, Instagram, Shopee,
+              Youtube...và một số dịch vụ khác để hỗ trợ cá nhân được nhiều
+              tương tác hơn, các shop bán hàng tốt và hiệu quả hơn.
+            </Typography>
+            <Typography variant="caption" className="text-black">
+              Các dịch vụ khác như Hack nick facebook, report fanpage, đọc trộm
+              tin nhắn, đánh giá xấu, dìm hàng...
+              <Typography
+                variant="caption"
+                className="text-black"
+                fontWeight="bold"
+              >
+                Nhân Phạm
+              </Typography>{" "}
+              tuyệt đối không nhận
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              width: "95%",
+              marginTop: "15px",
+              gap: 1,
+            }}
+          >
+            <Typography variant="caption" className="text-black">
+              SỬ DỤNG CÁC DỊCH VỤ NHIỀU NGƯỜI DÙNG NHẤT TẠI{" "}
+              <Typography
+                variant="caption"
+                className="text-black"
+                fontWeight="bold"
+              >
+                NHÂN PHẠM
+              </Typography>
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              width: "95%",
+              gap: 1,
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              className="text-blue-500"
+            >
+              Dịch vụ Facebook
+            </Typography>
+            <Stack
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                marginLeft: "7%",
+                gap: 5,
+                justifyContent: "flex-start",
+                flexDirection: "row",
+              }}
+            >
+              {cardData.map((card, index) => (
+                <CardList key={index} {...card} />
+              ))}
+            </Stack>
+          </Box>
+          <Box
+            sx={{
+              width: "95%",
+              gap: 1,
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              className="text-purple-500"
+            >
+              Dịch vụ Tiktok
+            </Typography>
+            <Stack
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                marginLeft: "7%",
+                gap: 5,
+                justifyContent: "flex-start",
+                flexDirection: "row",
+              }}
+            >
+              {cardData.map((card, index) => (
+                <CardList key={index} {...card} />
+              ))}
+            </Stack>
+          </Box>
+        </div>
       </Dashboard>
     </MainLayout>
   );

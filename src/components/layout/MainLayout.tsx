@@ -1,53 +1,15 @@
 "use client";
-import {
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import LoginIcon from "@mui/icons-material/Login";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
-import { Box, Button, useMediaQuery } from "@mui/material";
-import type { MenuProps } from "antd";
-import { Layout, Menu, Spin, theme } from "antd";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { ButtonCustom } from "../buttons";
+import { Box, Typography } from "@mui/material";
+import { Layout, Spin, theme } from "antd";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { ButtonCustom, MenuList } from "..";
 
 const { Header, Footer, Sider } = Layout;
-
-type MenuItem = Required<MenuProps>["items"][number];
-
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[]
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  } as MenuItem;
-}
-
-const items: MenuItem[] = [
-  getItem("Dịch vụ facebook", "1", <PieChartOutlined />, [
-    getItem("Tăng like bài viết", "1"),
-    getItem("Tăng share bài viết", "2"),
-    getItem("Tăng cmt bài viết", "3"),
-    getItem("Tăng like cho bình luận", "4"),
-  ]),
-  getItem("Tiktok", "5", <UserOutlined />, [
-    getItem("Tăng like, tim Tiktok", "6"),
-    getItem("Tăng view Tiktok", "7"),
-  ]),
-  getItem("Team", "sub2", <TeamOutlined />, []),
-  getItem("Files", "9", <FileOutlined />),
-];
 
 export default function MainLayout({ children }: any) {
   const router = useRouter();
@@ -61,14 +23,13 @@ export default function MainLayout({ children }: any) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 1));
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
         setLoading(false);
       }
     };
-
     fetchData();
   }, []);
 
@@ -87,15 +48,16 @@ export default function MainLayout({ children }: any) {
             <div className="text-center text-2xl text-zinc p-5">
               <Link href="/">Basic UI</Link>
             </div>
-            <Menu
-              theme="dark"
-              defaultSelectedKeys={["1"]}
-              mode="inline"
-              items={items}
-            />
+            <MenuList />
           </Sider>
           <Layout>
-            <Header style={{ padding: 0, background: colorBgContainer }}>
+            <Header
+              style={{
+                padding: 0,
+                background: colorBgContainer,
+                backgroundColor: "#e8e8e8",
+              }}
+            >
               <Box
                 style={{
                   padding: 15,
@@ -136,7 +98,7 @@ export default function MainLayout({ children }: any) {
                 </ButtonCustom>
               </Box>
             </Header>
-            {children}
+            <Box sx={{ marginBottom: "5%" }}>{children}</Box>
             <Footer
               style={{
                 display: "flex",
@@ -146,11 +108,24 @@ export default function MainLayout({ children }: any) {
                 bottom: 0,
                 width: "100%",
                 height: 0,
-                backgroundColor: "white",
+                backgroundColor: "#e8e8e8",
                 textAlign: "center",
               }}
             >
-              Xeno ©2023
+              <Typography variant="caption" className="text-black">
+                Hệ thống hoạt động 24/24. NV hỗ trợ 09-18h từ T2-T7 Dev by{" "}
+                <Typography
+                  variant="caption"
+                  className="text-black"
+                  fontWeight="bold"
+                >
+                  Xeno
+                </Typography>
+              </Typography>
+              <Typography variant="caption" className="text-black">
+                BuffAcc.vn | Điều khoản & Quy định | Chính sách bảo mật | Liên
+                hệ
+              </Typography>
             </Footer>
           </Layout>
         </Layout>
