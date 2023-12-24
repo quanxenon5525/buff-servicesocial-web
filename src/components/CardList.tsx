@@ -21,9 +21,10 @@ export const CardList: FC<CustomCardProps> = ({
     <Link href={href}>
       <Card
         style={{
-          width: 300,
-          //   maxWidth: "80%",
+          width: 320,
+          height: 125,
           marginTop: 16,
+          backgroundColor: "#00a680",
         }}
         hoverable
       >

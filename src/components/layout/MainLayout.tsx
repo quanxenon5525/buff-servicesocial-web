@@ -113,7 +113,7 @@ export default function MainLayout({ children }: any) {
               }}
             >
               <Typography variant="caption" className="text-black">
-                Hệ thống hoạt động 24/24. NV hỗ trợ 09-18h từ T2-T7 Dev by{" "}
+                Hệ thống hoạt động 24/7. NV hỗ trợ 09-18h từ T2-T7 Dev by{" "}
                 <Typography
                   variant="caption"
                   className="text-black"

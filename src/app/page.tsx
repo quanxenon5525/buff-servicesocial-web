@@ -2,72 +2,11 @@
 import Dashboard from "@/components/layout/Dashboard";
 import MainLayout from "@/components/layout/MainLayout";
 import { Box, Stack, Typography } from "@mui/material";
-import { Avatar, Breadcrumb } from "antd";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import { Avatar, List } from "antd";
 import CardList from "@/components/CardList";
-
-const cardData = [
-  {
-    title: "TĂNG LIKE BÀI VIẾT FB 1",
-    description: "Like bất kì bài viết công khai nào với chi phí rẻ",
-    icon: <PersonOutlineIcon />,
-    href: "like-post-fb",
-  },
-  {
-    title: "TĂNG SHARE BÀI VIẾT FB",
-    description: "Bài viết tiếp cận được nhiều người hơn",
-    icon: <PersonOutlineIcon />,
-    href: "share-post-fb",
-  },
-  {
-    title: "TĂNG COMMENT FB",
-    description: "Seeding bán hàng, tăng độ uy tín cho bài viết",
-    icon: <PersonOutlineIcon />,
-    href: "comment-post-fb",
-  },
-  {
-    title: "TĂNG LIKE CHO BÌNH LUẬN FB",
-    description: "Hack like cmt cho các cuộc bình chọn",
-    icon: <PersonOutlineIcon />,
-    href: "like-cmt-fb",
-  },
-  {
-    title: "TĂNG VIEW LIVESTREAM INSTAGRAM",
-    description: "Thêm hàng ngàn lượt view livestream tạo thương hiệu",
-    icon: <PersonOutlineIcon />,
-    href: "/",
-  },
-  {
-    title: "TĂNG FOLLOWER CHO FB",
-    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
-    icon: <PersonOutlineIcon />,
-    href: "/",
-  },
-  {
-    title: "TĂNG FOLLOWER CHO FB",
-    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
-    icon: <PersonOutlineIcon />,
-    href: "/",
-  },
-  {
-    title: "TĂNG FOLLOWER CHO FB",
-    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
-    icon: <PersonOutlineIcon />,
-    href: "/",
-  },
-  {
-    title: "TĂNG FOLLOWER CHO FB",
-    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
-    icon: <PersonOutlineIcon />,
-    href: "/",
-  },
-  {
-    title: "TĂNG FOLLOWER CHO FB",
-    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
-    icon: <PersonOutlineIcon />,
-    href: "/",
-  },
-];
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import { fbData, instagramData, tiktokData } from "@/common/cardData";
+import { dataListMain } from "@/common/listData";
 
 export default function Home() {
   return (
@@ -181,13 +120,13 @@ export default function Home() {
               sx={{
                 display: "flex",
                 flexWrap: "wrap",
-                marginLeft: "7%",
-                gap: 5,
+                marginLeft: "6%",
+                gap: 2,
                 justifyContent: "flex-start",
                 flexDirection: "row",
               }}
             >
-              {cardData.map((card, index) => (
+              {fbData.map((card, index) => (
                 <CardList key={index} {...card} />
               ))}
             </Stack>
@@ -209,16 +148,71 @@ export default function Home() {
               sx={{
                 display: "flex",
                 flexWrap: "wrap",
-                marginLeft: "7%",
-                gap: 5,
+                marginLeft: "6%",
+                gap: 2,
                 justifyContent: "flex-start",
                 flexDirection: "row",
               }}
             >
-              {cardData.map((card, index) => (
+              {tiktokData.map((card, index) => (
                 <CardList key={index} {...card} />
               ))}
             </Stack>
+          </Box>
+          <Box
+            sx={{
+              width: "95%",
+              gap: 1,
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              className="text-pink-500"
+            >
+              Dịch vụ Instagram
+            </Typography>
+            <Stack
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                marginLeft: "6%",
+                gap: 2,
+                justifyContent: "flex-start",
+                flexDirection: "row",
+              }}
+            >
+              {instagramData.map((card, index) => (
+                <CardList key={index} {...card} />
+              ))}
+            </Stack>
+          </Box>
+          <Box
+            sx={{
+              width: "95%",
+              gap: 1,
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              className="text-black"
+              fontWeight="bold"
+            >
+              VÌ SAO NÊN TIN TƯỞNG SỬ DỤNG DỊCH VỤ CỦA BUFFACC.VN
+            </Typography>
+            <List
+              itemLayout="horizontal"
+              dataSource={dataListMain}
+              renderItem={(item) => (
+                <List.Item>
+                  <List.Item.Meta
+                    avatar={item.avatar}
+                    title={item.title}
+                    description={item.description}
+                  />
+                </List.Item>
+              )}
+            />
           </Box>
         </div>
       </Dashboard>
