@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { Checkbox, Form, Input, Button, Flex } from "antd";
+import Link from "next/link";
 import { Chip, Stack } from "@mui/material";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 type FieldType = {
   username?: string;
@@ -11,7 +11,7 @@ type FieldType = {
   remember?: string;
 };
 
-export const LoginForm = () => {
+export default function SignUpForm() {
   const router = useRouter();
 
   const onFinish = (values: any) => {
@@ -106,4 +106,4 @@ export const LoginForm = () => {
       </Form>
     </div>
   );
-};
+}

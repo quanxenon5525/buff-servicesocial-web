@@ -57,7 +57,7 @@ type FieldType = {
   phone?: string;
 };
 
-export const SignUpForm = () => {
+export default function FormLogin() {
   const router = useRouter();
   const onFinish = (values: any) => {
     if (values) {
@@ -162,4 +162,4 @@ export const SignUpForm = () => {
       </Form>
     </div>
   );
-};
+}
