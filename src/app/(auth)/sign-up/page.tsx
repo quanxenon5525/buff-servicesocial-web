@@ -57,7 +57,7 @@ type FieldType = {
   phone?: string;
 };
 
-export const page = () => {
+export const Page = () => {
   const router = useRouter();
   const onFinish = (values: any) => {
     if (values) {
@@ -164,4 +164,4 @@ export const page = () => {
   );
 };
 
-export default page;
+export default Page;

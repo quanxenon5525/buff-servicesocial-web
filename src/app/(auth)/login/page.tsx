@@ -11,7 +11,7 @@ type FieldType = {
   remember?: string;
 };
 
-export const page = () => {
+export const Page = () => {
   const router = useRouter();
 
   const onFinish = (values: any) => {
@@ -108,4 +108,4 @@ export const page = () => {
   );
 };
 
-export default page;
+export default Page;
