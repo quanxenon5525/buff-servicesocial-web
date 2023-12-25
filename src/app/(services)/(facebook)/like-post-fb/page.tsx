@@ -4,12 +4,13 @@ import Dashboard from "@/components/layout/Dashboard";
 import MainLayout from "@/components/layout/MainLayout";
 import { Tabs, TabsProps } from "antd";
 import Link from "next/link";
+import { CreateOrderFB } from "./CreateOrderFB";
 
 const tabs: TabsProps["items"] = [
   {
     key: "1",
     label: "Tạo đơn hàng",
-    children: "hi",
+    children: <CreateOrderFB />,
   },
   {
     key: "2",

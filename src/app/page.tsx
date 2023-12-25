@@ -120,10 +120,10 @@ export default function Home() {
               sx={{
                 display: "flex",
                 flexWrap: "wrap",
-                marginLeft: "7%",
-                gap: 2,
                 justifyContent: "flex-start",
+                marginLeft: "40px",
                 flexDirection: "row",
+                gap: 2,
               }}
             >
               {fbData.map((card, index) => (
@@ -148,10 +148,10 @@ export default function Home() {
               sx={{
                 display: "flex",
                 flexWrap: "wrap",
-                marginLeft: "6%",
-                gap: 2,
                 justifyContent: "flex-start",
+                marginLeft: "40px",
                 flexDirection: "row",
+                gap: 2,
               }}
             >
               {tiktokData.map((card, index) => (
@@ -176,10 +176,10 @@ export default function Home() {
               sx={{
                 display: "flex",
                 flexWrap: "wrap",
-                marginLeft: "6%",
-                gap: 2,
                 justifyContent: "flex-start",
+                marginLeft: "40px",
                 flexDirection: "row",
+                gap: 2,
               }}
             >
               {instagramData.map((card, index) => (

@@ -1,5 +1,12 @@
 "use client";
 import { SmallIconsTiktok } from "@/common/cardData";
+import {
+  ContactMail,
+  Instagram,
+  Person2Sharp,
+  Phone,
+  YouTube,
+} from "@mui/icons-material";
 import CommentIcon from "@mui/icons-material/Comment";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GroupsIcon from "@mui/icons-material/Groups";
@@ -58,6 +65,24 @@ const items: MenuItem[] = [
     getItem("Tăng comment Tiktok", "19", <SmallIconsTiktok />),
     getItem("Tăng save Tiktok", "20", <SmallIconsTiktok />),
     getItem("Tăng share Tiktok", "21", <SmallIconsTiktok />),
+  ]),
+  getItem("Instagram", "22", <Instagram />, [
+    getItem("Tăng tim Instagram", "23", <Instagram />),
+    getItem("Tăng follow Instagram", "24", <Instagram />),
+    getItem("Tăng view livestream Instagram", "25", <Instagram />),
+    getItem("Tăng comment Instagram", "26", <Instagram />),
+  ]),
+  getItem("Youtube", "27", <YouTube />, [
+    getItem("Youtube Premium", "28", <YouTube />),
+    getItem("Tăng view giờ xem Youtube", "29", <YouTube />),
+    getItem("Tăng like Youtube", "30", <YouTube />),
+    getItem("Tăng view Youtube", "31", <YouTube />),
+    getItem("Tăng subscribers Youtube", "32", <YouTube />),
+    getItem("Tăng comments Youtube", "33", <YouTube />),
+  ]),
+  getItem("Cho thành viên", "34", <Person2Sharp />, [
+    getItem("Fanpage admin", "35", <ContactMail />),
+    getItem("Liên hệ", "36", <Phone />),
   ]),
 ];
 

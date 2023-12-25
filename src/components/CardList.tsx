@@ -2,7 +2,6 @@ import { useMediaQuery } from "@mui/material";
 import { Card } from "antd";
 import Link from "next/link";
 import { FC } from "react";
-
 interface CustomCardProps {
   title: string;
   description: string;
@@ -17,8 +16,8 @@ export const CardList: FC<CustomCardProps> = ({
   icon,
 }) => {
   const { Meta } = Card;
-  const isMd = useMediaQuery("(min-width: 768px)");
-  const cardWidth = isMd ? 350 : 200;
+  const sm = useMediaQuery("(min-width: 750px)");
+  const cardWidth = sm ? 350 : 200;
 
   return (
     <Link href={href}>
