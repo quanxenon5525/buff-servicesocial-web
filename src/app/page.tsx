@@ -120,7 +120,7 @@ export default function Home() {
               sx={{
                 display: "flex",
                 flexWrap: "wrap",
-                marginLeft: "6%",
+                marginLeft: "7%",
                 gap: 2,
                 justifyContent: "flex-start",
                 flexDirection: "row",

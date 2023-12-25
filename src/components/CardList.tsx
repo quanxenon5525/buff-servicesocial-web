@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import { Card } from "antd";
 import Link from "next/link";
 import { FC } from "react";
@@ -16,13 +17,15 @@ export const CardList: FC<CustomCardProps> = ({
   icon,
 }) => {
   const { Meta } = Card;
+  const isMd = useMediaQuery("(min-width: 768px)");
+  const cardWidth = isMd ? 350 : 200;
 
   return (
     <Link href={href}>
       <Card
         style={{
-          width: 320,
-          height: 125,
+          width: cardWidth,
+          height: 150,
           marginTop: 16,
           backgroundColor: "#00a680",
         }}
