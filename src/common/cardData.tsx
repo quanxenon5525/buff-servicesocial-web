@@ -10,6 +10,7 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { SVGProps } from "react";
 
 export function SimpleIconsTiktok(props: SVGProps<SVGSVGElement>) {
   return (
