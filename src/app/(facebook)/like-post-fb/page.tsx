@@ -18,30 +18,30 @@ const tabs: TabsProps["items"] = [
     children: "he",
   },
 ];
-export const FacebookPage = () => {
+export default function FacebookPage() {
   const onChange = (key: string) => {
     console.log(key);
   };
 
   return (
-    <MainLayout>
-      <Dashboard
-        breadcrumb
-        items={[
-          { title: <Link href="/">Trang chủ</Link> },
-          { title: "Tăng like bài viết" },
-        ]}
-      >
-        <Tabs
-          className="ml-5"
-          type="card"
-          defaultActiveKey="1"
-          items={tabs}
-          onChange={onChange}
-        />
-      </Dashboard>
-    </MainLayout>
+    <>
+      <MainLayout>
+        <Dashboard
+          breadcrumb
+          items={[
+            { title: <Link href="/">Trang chủ</Link> },
+            { title: "Tăng like bài viết" },
+          ]}
+        >
+          <Tabs
+            className="ml-5"
+            type="card"
+            defaultActiveKey="1"
+            items={tabs}
+            onChange={onChange}
+          />
+        </Dashboard>
+      </MainLayout>
+    </>
   );
-};
-
-export default FacebookPage;
+}
