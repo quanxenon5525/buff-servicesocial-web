@@ -5,6 +5,8 @@ import MainLayout from "@/components/layout/MainLayout";
 import { Tabs, TabsProps } from "antd";
 import Link from "next/link";
 import { CreateOrderFB } from "./CreateOrderFB";
+import { InstructionBox } from "@/components/InstructionBox";
+import { Grid } from "@mui/material";
 
 const tabs: TabsProps["items"] = [
   {
@@ -40,6 +42,7 @@ export default function FacebookPage() {
             items={tabs}
             onChange={onChange}
           />
+          <InstructionBox />
         </Dashboard>
       </MainLayout>
     </>

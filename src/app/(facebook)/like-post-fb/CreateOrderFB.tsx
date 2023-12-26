@@ -1,26 +1,14 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Stack,
-  Grid,
-  Typography,
-  TextField,
-  Divider,
-} from "@mui/material";
+import { InstructionBox } from "@/components/InstructionBox";
+import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import {
   Alert,
   Button,
-  Cascader,
   DatePicker,
   Form,
   Input,
   InputNumber,
-  Radio,
   Select,
-  Switch,
-  TreeSelect,
 } from "antd";
-import { SizeType } from "antd/es/config-provider/SizeContext";
 
 const formItemLayout = {
   labelCol: {
@@ -81,6 +69,7 @@ export const CreateOrderFB = () => {
                     <InputNumber
                       style={{ width: "100%" }}
                       placeholder="Link bài full link"
+                      min={0}
                     />
                   </Form.Item>
                   <Form.Item label="Lên lịch">
@@ -125,31 +114,6 @@ export const CreateOrderFB = () => {
               <Typography variant="body2">
                 Tốc độ thực tế có thể chậm hơn hoặc nhanh hơn tốc độ trung bình
               </Typography>
-              <div style={{ marginTop: "15px" }}>
-                <Typography
-                  variant="body2"
-                  fontWeight="bold"
-                  className="text-red-500"
-                >
-                  Like post Facebook Server 1
-                </Typography>
-                <Typography variant="body2">
-                  Giá: 30đ, Min: 50 - Max: 100000
-                </Typography>
-                <Typography variant="body2">
-                  Bắt đầu: 2-5p, Like người Việt Nam, có avatar, tốc độ nhanh,
-                  lên dư like
-                </Typography>
-                <Typography variant="body2">
-                  Tăng ảnh trong album sẽ lên like bài viết
-                </Typography>
-                <Typography variant="body2">
-                  Tốc độ TB: 1-2h/100 like, Bảo hành: Không
-                </Typography>
-                <Typography variant="body2">
-                  Cho phép hủy: -1000đ , Tỉ lệ rớt: 5-15% (sau 10 ngày)
-                </Typography>
-              </div>
               <ListPackage />
               <NoticePackage />
             </Box>
@@ -185,7 +149,7 @@ const ListPackage = () => {
       <Divider />
       <div style={{ marginTop: "15px" }}>
         <Typography variant="body2" fontWeight="bold" className="text-red-500">
-          Like post Facebook Server 1
+          Like post Facebook Server 2
         </Typography>
         <Typography variant="body2">Giá: 30đ, Min: 50 - Max: 100000</Typography>
         <Typography variant="body2">
@@ -205,7 +169,7 @@ const ListPackage = () => {
       <Divider />
       <div style={{ marginTop: "15px" }}>
         <Typography variant="body2" fontWeight="bold" className="text-red-500">
-          Like post Facebook Server 1
+          Like post Facebook Server 3
         </Typography>
         <Typography variant="body2">Giá: 30đ, Min: 50 - Max: 100000</Typography>
         <Typography variant="body2">
@@ -267,8 +231,8 @@ const NoticePackage = () => {
         trách nhiệm
       </Typography>
       <Alert
-        style={{ marginTop: "15px", color: "red" }}
-        message="Ngiêm cấm Buff các bài có nội dung cờ bạc, lô đề, vào bờ, chưởi bậy, dìm hàng shop, cá nhân khác hoặc bốc phốt nhau, nội dung vi phạm pháp luật, chính trị, đồi trụy, mại dâm, súng đạn... Nếu cố tình buff bạn sẽ bị trừ hết tiền và band khỏi hệ thống like68 vĩnh viễn"
+        style={{ marginTop: "15px", marginRight: "10px", color: "red" }}
+        message="Ngiêm cấm Buff các bài có nội dung cờ bạc, lô đề, vào bờ, chưởi bậy, dìm hàng shop, cá nhân khác hoặc bốc phốt nhau, nội dung vi phạm pháp luật, chính trị, đồi trụy, mại dâm, súng đạn... Nếu cố tình buff bạn sẽ bị trừ hết tiền và band khỏi hệ thống Nhân Phạm vĩnh viễn"
         type="error"
       />
     </>

@@ -22,3 +22,19 @@ export const dataListMain = [
       "Chỉ từ 100.000đ là bạn đã có thể bắt đầu trải nghiệm các dịch vụ của Buffacc.vn. Luôn có giá cực kỳ ưu đãi cho khách hàng thân thiết. Đăng ký ngay hôm nay nào",
   },
 ];
+
+export const dataListInstruction = [
+  {
+    title: "Bước 1:",
+    description: "Bạn đăng ký 1 tài khoản",
+  },
+  {
+    title: "Bước 2:",
+    description:
+      "Sau khi đăng ký tài khoản ở bước 1 xong, bạn nạp tiền vào tài khoản (Mức tối thiểu 50k, sau khi nạp xong bạn dùng bao nhiêu thì hệ thống sẽ trừ bấy nhiêu)",
+  },
+  {
+    title: "Bước 3:",
+    description: "Sử dụng chức năng tự động tăng like",
+  },
+];

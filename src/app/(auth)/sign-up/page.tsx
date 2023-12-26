@@ -1,6 +1,7 @@
 "use client";
 import { Chip } from "@mui/material";
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input, Select, Typography } from "antd";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const { Option } = Select;
@@ -146,7 +147,10 @@ export default function FormLogin() {
           <Input.Password />
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
-          <Button className="text-center gap-y-1.5" htmlType="submit">
+          <Typography style={{ color: "red" }}>
+            <Link href="/login">Bạn đã có tài khoản? hãy đăng nhập</Link>
+          </Typography>
+          <Button className="text-center gap-y-1.5 mt-3" htmlType="submit">
             Register
           </Button>
         </Form.Item>
