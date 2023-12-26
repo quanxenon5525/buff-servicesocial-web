@@ -17,7 +17,7 @@ export const CardList: FC<CustomCardProps> = ({
 }) => {
   const { Meta } = Card;
   const sm = useMediaQuery("(min-width: 750px)");
-  const cardWidth = sm ? 350 : 200;
+  const cardWidth = sm ? 300 : 200;
 
   return (
     <Link href={href}>

@@ -18,7 +18,7 @@ const tabs: TabsProps["items"] = [
     children: "he",
   },
 ];
-export const page = () => {
+export const FacebookPage = () => {
   const onChange = (key: string) => {
     console.log(key);
   };
@@ -44,4 +44,4 @@ export const page = () => {
   );
 };
 
-export default page;
+export default FacebookPage;

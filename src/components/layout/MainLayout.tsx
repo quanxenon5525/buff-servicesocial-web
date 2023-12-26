@@ -7,7 +7,8 @@ import { Layout, Spin, theme } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ButtonCustom, MenuList } from "..";
+import { ButtonCustom } from "..";
+import MenuList from "../MenuList";
 
 const { Header, Footer, Sider } = Layout;
 

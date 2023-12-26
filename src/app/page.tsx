@@ -5,8 +5,8 @@ import { Box, Stack, Typography } from "@mui/material";
 import { Avatar, List } from "antd";
 import CardList from "@/components/CardList";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import { fbData, instagramData, tiktokData } from "@/common/cardData";
-import { dataListMain } from "@/common/listData";
+import { fbData, instagramData, tiktokData } from "@/data/cardData";
+import { dataListMain } from "@/data/listData";
 
 export default function Home() {
   return (

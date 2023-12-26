@@ -274,3 +274,5 @@ const NoticePackage = () => {
     </>
   );
 };
+
+export default CreateOrderFB;

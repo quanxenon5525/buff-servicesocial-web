@@ -1,4 +1,3 @@
-import Layout from "@/components/layout/MainLayout";
 import "./globals.css";
 
 export default function RootLayout({

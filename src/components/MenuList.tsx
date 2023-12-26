@@ -1,5 +1,5 @@
 "use client";
-import { SmallIconsTiktok } from "@/common/cardData";
+import { SmallIconsTiktok } from "@/data/cardData";
 import {
   ContactMail,
   Instagram,

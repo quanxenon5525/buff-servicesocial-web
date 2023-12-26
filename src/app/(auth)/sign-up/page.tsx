@@ -5,18 +5,6 @@ import { useRouter } from "next/navigation";
 
 const { Option } = Select;
 
-/* eslint-disable no-template-curly-in-string */
-const validateMessages = {
-  required: "${label} is required!",
-  types: {
-    email: "${label} is not a valid email!",
-    number: "${label} is not a valid number!",
-  },
-  number: {
-    range: "${label} must be between ${min} and ${max}",
-  },
-};
-
 const prefixSelector = (
   <Form.Item name="prefix" noStyle>
     <Select defaultValue="84" style={{ width: 70 }}>
@@ -72,7 +60,12 @@ export default function FormLogin() {
   return (
     <div className="p-20">
       <div className="text-black text-center mb-10">
-        <Chip variant="outlined" size="large" color="primary" label="ĐĂNG KÝ" />
+        <Chip
+          variant="outlined"
+          size="medium"
+          color="primary"
+          label="ĐĂNG KÝ"
+        />
       </div>
       <Form
         {...formItemLayout}
@@ -83,11 +76,9 @@ export default function FormLogin() {
           maxWidth: "50%",
         }}
         scrollToFirstError
-        // layout="vertical"
         labelWrap
         labelAlign="left"
         autoComplete="off"
-        // validateMessages={validateMessages}
       >
         <Form.Item<FieldType>
           name="username"
