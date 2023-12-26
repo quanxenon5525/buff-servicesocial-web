@@ -1,9 +1,6 @@
-import { dataListInstruction } from "@/data/listData";
 import { Box, Divider, Typography } from "@mui/material";
-import { Alert, List } from "antd";
-import Image from "next/image";
+import { Alert } from "antd";
 import Link from "next/link";
-import React from "react";
 
 export const InstructionBox = () => {
   return (
@@ -58,7 +55,10 @@ export const InstructionBox = () => {
         </Typography>
         <Typography variant="body2">
           Do bảng giá cập nhật thường xuyên nên bạn xem Bảng giá mới nhất:{" "}
-          <Link href="priceList" style={{ fontWeight: "bold", color: "blue" }}>
+          <Link
+            href="/price-list"
+            style={{ fontWeight: "bold", color: "blue" }}
+          >
             Xem bảng giá tại đây
           </Link>
         </Typography>
@@ -101,18 +101,54 @@ export const InstructionBox = () => {
         <Typography variant="h5" fontWeight="bold">
           Hướng dẫn sử dụng chức năng tăng like tại Buffacc.vn
         </Typography>
-        <List
-          itemLayout="horizontal"
-          dataSource={dataListInstruction}
-          renderItem={(item) => (
-            <List.Item>
-              <List.Item.Meta
-                title={item.title}
-                description={item.description}
-              />
-            </List.Item>
-          )}
-        />
+        <div>
+          <Typography variant="subtitle1" fontWeight="bold">
+            Bước 1:
+          </Typography>
+          <Typography variant="body2">
+            Bạn đăng ký 1 tài khoản{" "}
+            <Link style={{ color: "blue", fontWeight: "bold" }} href="/login">
+              TẠI ĐÂY
+            </Link>
+          </Typography>
+          <Typography variant="subtitle1" fontWeight="bold">
+            Bước 2:
+          </Typography>
+          <Typography variant="body2">
+            Sau khi đăng ký tài khoản ở bước 1 xong, bạn nạp tiền vào tài khoản{" "}
+            <Link style={{ color: "blue", fontWeight: "bold" }} href="/">
+              TẠI ĐÂY
+            </Link>{" "}
+            (Mức tối thiểu 50k, sau khi nạp xong bạn dùng bao nhiêu thì hệ thống
+            sẽ trừ bấy nhiêu)
+          </Typography>
+          <Typography variant="subtitle1" fontWeight="bold">
+            Bước 3:
+          </Typography>
+          <Typography variant="body2">
+            Sử dụng chức năng tự động tăng like{" "}
+            <Link style={{ color: "blue", fontWeight: "bold" }} href="/login">
+              TẠI ĐÂY
+            </Link>
+          </Typography>
+        </div>
+      </div>
+      <Divider />
+      <div style={{ margin: "15px" }}>
+        <Typography variant="h6" fontWeight="bold">
+          Nếu có gặp khó khăn gì, nhắn trực tiếp vào Fanpage sẽ có nhân viên hỗ
+          trợ
+        </Typography>
+        <Typography variant="body2" fontWeight="bold">
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Link href="https://www.facebook.com/thanhnhan28101">
+              FB: https://www.facebook.com/thanhnhan28101
+            </Link>
+            <Link href="https://www.facebook.com/AutoplayTogether">
+              FANPAGE: https://www.facebook.com/AutoplayTogether
+            </Link>
+          </div>
+        </Typography>
       </div>
     </Box>
   );

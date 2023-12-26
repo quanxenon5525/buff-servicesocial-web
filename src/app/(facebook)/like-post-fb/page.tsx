@@ -6,7 +6,7 @@ import { Tabs, TabsProps } from "antd";
 import Link from "next/link";
 import { CreateOrderFB } from "./CreateOrderFB";
 import { InstructionBox } from "@/components/InstructionBox";
-import { Grid } from "@mui/material";
+import { HistoryOrderFB } from "./HistoryOrderFB";
 
 const tabs: TabsProps["items"] = [
   {
@@ -17,7 +17,7 @@ const tabs: TabsProps["items"] = [
   {
     key: "2",
     label: "Lịch sử đơn hàng",
-    children: "he",
+    children: <HistoryOrderFB />,
   },
 ];
 export default function FacebookPage() {

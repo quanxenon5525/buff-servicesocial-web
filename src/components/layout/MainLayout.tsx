@@ -72,7 +72,7 @@ export default function MainLayout({ children }: any) {
                   color="error"
                   startIcon={<AttachMoneyIcon />}
                   onClick={() => {
-                    router.push("/priceList");
+                    router.push("/price-list");
                   }}
                 >
                   Bảng giá
@@ -108,7 +108,7 @@ export default function MainLayout({ children }: any) {
                 position: "fixed",
                 bottom: 0,
                 width: "100%",
-                height: 0,
+                height: 75,
                 backgroundColor: "#e8e8e8",
                 textAlign: "center",
               }}

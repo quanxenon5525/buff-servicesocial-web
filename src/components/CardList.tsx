@@ -18,6 +18,7 @@ export const CardList: FC<CustomCardProps> = ({
   const { Meta } = Card;
   const sm = useMediaQuery("(min-width: 750px)");
   const cardWidth = sm ? 300 : 200;
+  const responsive = sm ? 40 : 0;
 
   return (
     <Link href={href}>
@@ -26,6 +27,7 @@ export const CardList: FC<CustomCardProps> = ({
           width: cardWidth,
           height: 150,
           marginTop: 16,
+          marginLeft: responsive,
           backgroundColor: "#00a680",
         }}
         hoverable
