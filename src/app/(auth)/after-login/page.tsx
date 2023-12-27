@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Dashboard from "@/components/layout/Dashboard";
 import MainLayout from "@/components/layout/MainLayout";
 import { Box, Stack, Typography } from "@mui/material";
@@ -8,9 +9,9 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { fbData, instagramData, tiktokData } from "@/data/cardData";
 import { dataListMain } from "@/data/listData";
 
-export default function Home() {
+export default function AfterLogin() {
   return (
-    <MainLayout loginAuth={false}>
+    <MainLayout>
       <Dashboard breadcrumb>
         <div
           style={{

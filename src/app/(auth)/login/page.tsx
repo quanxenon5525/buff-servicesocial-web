@@ -17,7 +17,7 @@ export default function SignUpForm() {
   const onFinish = (values: any) => {
     const { username, password } = values;
     if (username && password) {
-      router.push("/");
+      router.push("/after-login");
     }
   };
 

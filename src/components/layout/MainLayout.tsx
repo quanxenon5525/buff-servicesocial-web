@@ -1,4 +1,5 @@
 "use client";
+import { LogoutOutlined } from "@mui/icons-material";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import LoginIcon from "@mui/icons-material/Login";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
@@ -9,10 +10,19 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ButtonCustom } from "..";
 import MenuList from "../MenuList";
+import MenuListFake from "../MenuListFake";
 
 const { Header, Footer, Sider } = Layout;
 
-export default function MainLayout({ children }: any) {
+type LayoutProps = {
+  children: any;
+  loginAuth?: boolean;
+};
+
+export default function MainLayout({
+  children,
+  loginAuth = true,
+}: LayoutProps) {
   const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -49,7 +59,7 @@ export default function MainLayout({ children }: any) {
             <div className="text-center text-2xl text-zinc p-5">
               <Link href="/">Basic UI</Link>
             </div>
-            <MenuList />
+            {loginAuth ? <MenuList /> : <MenuListFake />}
           </Sider>
           <Layout>
             <Header
@@ -59,45 +69,77 @@ export default function MainLayout({ children }: any) {
                 backgroundColor: "#e8e8e8",
               }}
             >
-              <Box
-                style={{
-                  padding: 15,
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  gap: 10,
-                }}
-              >
-                <ButtonCustom
-                  variant="outlined"
-                  color="error"
-                  startIcon={<AttachMoneyIcon />}
-                  onClick={() => {
-                    router.push("/price-list");
+              {!loginAuth ? (
+                <Box
+                  style={{
+                    padding: 15,
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    gap: 10,
                   }}
                 >
-                  Bảng giá
-                </ButtonCustom>
-                <ButtonCustom
-                  variant="outlined"
-                  color="primary"
-                  startIcon={<LoginIcon />}
-                  onClick={() => {
-                    router.push("/login");
+                  <ButtonCustom
+                    variant="outlined"
+                    color="error"
+                    startIcon={<AttachMoneyIcon />}
+                    onClick={() => {
+                      router.push("/price-list");
+                    }}
+                  >
+                    Bảng giá
+                  </ButtonCustom>
+                  <ButtonCustom
+                    variant="outlined"
+                    color="primary"
+                    startIcon={<LoginIcon />}
+                    onClick={() => {
+                      router.push("/login");
+                    }}
+                  >
+                    Đăng nhập
+                  </ButtonCustom>
+                  <ButtonCustom
+                    variant="outlined"
+                    color="secondary"
+                    startIcon={<PersonAddAltIcon />}
+                    onClick={() => {
+                      router.push("/sign-up");
+                    }}
+                  >
+                    Đăng ký
+                  </ButtonCustom>
+                </Box>
+              ) : (
+                <Box
+                  style={{
+                    padding: 15,
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    gap: 10,
                   }}
                 >
-                  Đăng nhập
-                </ButtonCustom>
-                <ButtonCustom
-                  variant="outlined"
-                  color="secondary"
-                  startIcon={<PersonAddAltIcon />}
-                  onClick={() => {
-                    router.push("/sign-up");
-                  }}
-                >
-                  Đăng ký
-                </ButtonCustom>
-              </Box>
+                  <ButtonCustom
+                    variant="outlined"
+                    color="error"
+                    startIcon={<AttachMoneyIcon />}
+                    onClick={() => {
+                      router.push("/price-list");
+                    }}
+                  >
+                    Bảng giá
+                  </ButtonCustom>
+                  <ButtonCustom
+                    variant="outlined"
+                    color="success"
+                    startIcon={<LogoutOutlined />}
+                    onClick={() => {
+                      router.push("/");
+                    }}
+                  >
+                    Đăng xuất
+                  </ButtonCustom>
+                </Box>
+              )}
             </Header>
             <Box sx={{ marginBottom: "5%" }}>{children}</Box>
             <Footer
