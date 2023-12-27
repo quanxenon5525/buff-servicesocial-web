@@ -1,5 +1,5 @@
 "use client";
-import { LogoutOutlined } from "@mui/icons-material";
+import { LogoutOutlined, Person2Outlined } from "@mui/icons-material";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import LoginIcon from "@mui/icons-material/Login";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ButtonCustom } from "..";
 import MenuList from "../MenuList";
-import MenuListFake from "../MenuListFake";
+import MenuListFake from "../MenuListUnLogin";
 
 const { Header, Footer, Sider } = Layout;
 
@@ -59,6 +59,23 @@ export default function MainLayout({
             <div className="text-center text-2xl text-zinc p-5">
               <Link href="/">Basic UI</Link>
             </div>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                alignContent: "center",
+              }}
+            >
+              <Typography variant="body2" fontWeight="bold">
+                <Link href="/user">Hi Nhân</Link>
+              </Typography>
+              <Box>
+                <Typography variant="caption">Thành viên cấp 10</Typography>
+                {" - "}
+                <Typography variant="caption">Số dư: 999.999.999đ</Typography>
+              </Box>
+            </Box>
             {loginAuth ? <MenuList /> : <MenuListFake />}
           </Sider>
           <Layout>
@@ -83,7 +100,7 @@ export default function MainLayout({
                     color="error"
                     startIcon={<AttachMoneyIcon />}
                     onClick={() => {
-                      router.push("/price-list");
+                      router.push("/price-unlogin");
                     }}
                   >
                     Bảng giá
@@ -118,6 +135,16 @@ export default function MainLayout({
                     gap: 10,
                   }}
                 >
+                  <ButtonCustom
+                    variant="outlined"
+                    color="primary"
+                    startIcon={<Person2Outlined />}
+                    onClick={() => {
+                      router.push("/user");
+                    }}
+                  >
+                    Thông tin
+                  </ButtonCustom>
                   <ButtonCustom
                     variant="outlined"
                     color="error"
