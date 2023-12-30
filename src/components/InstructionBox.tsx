@@ -127,7 +127,10 @@ export const InstructionBox = () => {
           </Typography>
           <Typography variant="body2">
             Sử dụng chức năng tự động tăng like{" "}
-            <Link style={{ color: "blue", fontWeight: "bold" }} href="/login">
+            <Link
+              style={{ color: "blue", fontWeight: "bold" }}
+              href="/like-post-fb"
+            >
               TẠI ĐÂY
             </Link>
           </Typography>

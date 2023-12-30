@@ -7,6 +7,7 @@ import CardList from "@/components/CardList";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { fbData, instagramData, tiktokData } from "@/data/cardData";
 import { dataListMain } from "@/data/listData";
+import BoxAvatar from "@/components/BoxAvatar";
 
 export default function Home() {
   return (
@@ -20,33 +21,14 @@ export default function Home() {
             gap: 20,
           }}
         >
-          <Box
-            sx={{
-              width: "95%",
-              border: "0.5px solid black",
-              padding: "15px",
-              display: "flex",
-              flexDirection: "row",
-              gap: 3,
-            }}
-          >
-            <Avatar shape="square" size={64} icon={<PersonOutlineIcon />} />
-            <Stack>
-              <Typography
-                variant="subtitle1"
-                className="text-black"
-                fontWeight="bold"
-              >
-                Phạm Thành Nhân
-              </Typography>
-              <Typography variant="caption" className="text-black">
-                Thành viên <b className="text-red-500">cấp 10</b>
-              </Typography>
-              <Typography variant="caption" className="text-black">
-                Số dư: 999.999.999đ
-              </Typography>
-            </Stack>
-          </Box>
+          <BoxAvatar
+            name="Phạm Thành Nhân"
+            level={10}
+            balance="999.999"
+            avatarUrl={
+              "https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.15752-9/406045226_390198513670206_8047584056241224134_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=3_XeT0_jK-wAX_-Ckt6&_nc_ht=scontent.fsgn5-2.fna&oh=03_AdTj1MfxlB0bzpFzs0KzvZZ05LuNrU6zVAsGDvlHdKP7Pw&oe=65B5D719"
+            }
+          />
           <Box
             sx={{
               width: "95%",
