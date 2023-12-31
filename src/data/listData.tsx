@@ -22,3 +22,16 @@ export const dataListMain = [
       "Chỉ từ 100.000đ là bạn đã có thể bắt đầu trải nghiệm các dịch vụ của Buffacc.vn. Luôn có giá cực kỳ ưu đãi cho khách hàng thân thiết. Đăng ký ngay hôm nay nào",
   },
 ];
+
+export const dataUserInfo = [
+  "Tăng like bài viết FB:",
+  "Tăng share bài viết FB:",
+  "Tăng Comment FB :",
+  "Tăng like cho Bình luận:",
+  "Tăng mắt LiveStream:",
+  "Tăng Follow FB cá nhân:",
+  "Tăng like, follow Fanpage:",
+  "Tăng member Group:",
+  "Tăng view Video FB:",
+  "Tăng review Fanpage:",
+];

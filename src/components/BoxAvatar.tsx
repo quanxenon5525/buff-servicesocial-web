@@ -1,6 +1,7 @@
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { Box, Stack, Typography } from "@mui/material";
 import { Avatar } from "antd";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 type BoxAvatarProps = {
@@ -35,10 +36,10 @@ export default function BoxAvatar(props: BoxAvatarProps) {
           className="text-black"
           fontWeight="bold"
         >
-          {name}
+          <Link href="/user">{name}</Link>
         </Typography>
         <Typography variant="caption" className="text-black">
-          Thành viên <b className="text-red-500">{level}</b>
+          Thành viên cấp {" "}<b className="text-red-500">{level}</b>
         </Typography>
         <Typography variant="caption" className="text-black">
           Số dư: {balance}đ

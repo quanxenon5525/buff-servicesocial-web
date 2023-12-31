@@ -112,7 +112,7 @@ export default function FormLogin() {
           <Input />
         </Form.Item>
         <Form.Item<FieldType>
-          label="Password"
+          label="Mật khẩu"
           name="password"
           rules={[
             {
@@ -124,7 +124,7 @@ export default function FormLogin() {
           <Input.Password />
         </Form.Item>
         <Form.Item<FieldType>
-          label="Confirm Password"
+          label="Nhập lại mật khẩu"
           name="confirmPassword"
           dependencies={["password"]}
           rules={[

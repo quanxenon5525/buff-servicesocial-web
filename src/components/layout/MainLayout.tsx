@@ -1,9 +1,6 @@
 "use client";
 import { LogoutOutlined, Person2Outlined } from "@mui/icons-material";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import LoginIcon from "@mui/icons-material/Login";
-import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Layout, Spin, theme } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -11,7 +8,9 @@ import { useEffect, useState } from "react";
 import { ButtonCustom } from "..";
 import MenuList from "../MenuList";
 import MenuListFake from "../MenuListUnLogin";
-
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import LoginIcon from "@mui/icons-material/Login";
+import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 const { Header, Footer, Sider } = Layout;
 
 type LayoutProps = {
@@ -25,11 +24,11 @@ export default function MainLayout({
 }: LayoutProps) {
   const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
+  const isMediumScreen = useMediaQuery("(max-width: 767px)");
+  const [loading, setLoading] = useState(true);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,26 +56,48 @@ export default function MainLayout({
             onCollapse={(value) => setCollapsed(value)}
           >
             <div className="text-center text-2xl text-zinc p-5">
-              <Link href="/">Basic UI</Link>
+              {loginAuth ? (
+                <Link
+                  href="/after-login"
+                  style={{ fontSize: isMediumScreen ? "14px" : "18px" }}
+                >
+                  Buffacc.vn
+                </Link>
+              ) : (
+                <Link
+                  href="/"
+                  style={{ fontSize: isMediumScreen ? "14px" : "18px" }}
+                >
+                  Buffacc.vn
+                </Link>
+              )}
             </div>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                flexWrap: "wrap",
-                alignContent: "center",
-              }}
-            >
-              <Typography variant="body2" fontWeight="bold">
-                <Link href="/user">Hi Nhân</Link>
-              </Typography>
-              <Box>
-                <Typography variant="caption">Thành viên cấp 10</Typography>
-                {" - "}
-                <Typography variant="caption">Số dư: 999.999.999đ</Typography>
-              </Box>
-            </Box>
-            {loginAuth ? <MenuList /> : <MenuListFake />}
+            {loginAuth ? (
+              <>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    flexWrap: "wrap",
+                    alignContent: "center",
+                  }}
+                >
+                  <Typography variant="body2" fontWeight="bold">
+                    <Link href="/user">Hi Nhân</Link>
+                  </Typography>
+                  <Box>
+                    <Typography variant="caption">Thành viên cấp 10</Typography>
+                    {" - "}
+                    <Typography variant="caption">
+                      Số dư: 999.999.999đ
+                    </Typography>
+                  </Box>
+                </Box>
+                <MenuList />
+              </>
+            ) : (
+              <MenuListFake />
+            )}
           </Sider>
           <Layout>
             <Header

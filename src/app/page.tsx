@@ -21,14 +21,36 @@ export default function Home() {
             gap: 20,
           }}
         >
-          <BoxAvatar
-            name="Phạm Thành Nhân"
-            level={10}
-            balance="999.999"
-            avatarUrl={
-              "https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.15752-9/406045226_390198513670206_8047584056241224134_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=3_XeT0_jK-wAX_-Ckt6&_nc_ht=scontent.fsgn5-2.fna&oh=03_AdTj1MfxlB0bzpFzs0KzvZZ05LuNrU6zVAsGDvlHdKP7Pw&oe=65B5D719"
-            }
-          />
+          <Box
+            sx={{
+              width: "95%",
+              border: "0.5px solid black",
+              padding: "15px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 1,
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              className="text-yellow-500"
+              fontWeight="bold"
+            >
+              Chào mừng bạn đã đến với dịch vụ buff like, share, comment các nền
+              tảng mạng xã hội của chúng tôi
+            </Typography>
+            <Typography variant="caption" className="text-black">
+              Để sử dụng dịch vụ vui lòng làm tạo tài khoản và sử dụng tài khoản
+              cá nhân để sử dụng dịch vụ.
+            </Typography>
+            <Typography
+              variant="caption"
+              className="text-red-500"
+              fontWeight="bold"
+            >
+              Vui lòng không cung cấp password cho bất cứ ai kể cả admin
+            </Typography>
+          </Box>
           <Box
             sx={{
               width: "95%",
@@ -62,7 +84,7 @@ export default function Home() {
                 className="text-black"
                 fontWeight="bold"
               >
-                Nhân Phạm
+                CHÚNG TÔI
               </Typography>{" "}
               tuyệt đối không nhận
             </Typography>

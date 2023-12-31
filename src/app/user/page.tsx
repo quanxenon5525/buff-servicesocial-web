@@ -1,14 +1,35 @@
 "use client";
+import BoxAvatar from "@/components/BoxAvatar";
 import Dashboard from "@/components/layout/Dashboard";
 import MainLayout from "@/components/layout/MainLayout";
-import { Box, Stack, Typography } from "@mui/material";
+import { Tabs, TabsProps } from "antd";
 import Link from "next/link";
-import React from "react";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import { Avatar } from "antd";
-import BoxAvatar from "@/components/BoxAvatar";
+import Information from "./Information";
+import Orders from "./Orders";
+
+const items: TabsProps["items"] = [
+  {
+    key: "1",
+    label: "Thông tin",
+    children: <Information />,
+  },
+  {
+    key: "2",
+    label: "Đơn hàng",
+    children: <Orders />,
+  },
+  {
+    key: "3",
+    label: "Lịch sử giao dịch",
+    children: "Content of Tab Pane 3",
+  },
+];
 
 export default function UserInformation() {
+  const onChangeTabs = (key: string) => {
+    console.log(key);
+  };
+
   return (
     <>
       <MainLayout>
@@ -36,6 +57,13 @@ export default function UserInformation() {
               }
             />
           </div>
+          <Tabs
+            style={{ marginLeft: "3%" }}
+            defaultActiveKey="1"
+            items={items}
+            onChange={onChangeTabs}
+          />
+          ;
         </Dashboard>
       </MainLayout>
       ;
