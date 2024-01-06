@@ -1,4 +1,4 @@
-import { PriceProps } from "@/app/(auth)/price-list/page";
+import { PriceProps } from "@/app/price-list/page";
 import { DataType } from "@/app/(facebook)/like-post-fb/HistoryOrderFB";
 
 export const dataFB: DataType[] = [

@@ -4,11 +4,12 @@ import Dashboard from "@/components/layout/Dashboard";
 import MainLayout from "@/components/layout/MainLayout";
 import { Box, Stack, Typography } from "@mui/material";
 import { Avatar, List } from "antd";
-import CardList from "@/components/CardList";
+import CustomCard from "@/components/CustomCard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { fbData, instagramData, tiktokData } from "@/data/cardData";
 import { dataListMain } from "@/data/listData";
 import BoxAvatar from "@/components/BoxAvatar";
+import CardList from "@/components/CardList";
 
 export default function AfterLogin() {
   return (
@@ -86,89 +87,28 @@ export default function AfterLogin() {
               </Typography>
             </Typography>
           </Box>
-          <Box
-            sx={{
-              width: "95%",
-              gap: 1,
-            }}
-          >
-            <Typography
-              variant="subtitle1"
-              fontWeight="bold"
-              className="text-blue-500"
-            >
-              Dịch vụ Facebook
-            </Typography>
-            <Stack
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "flex-start",
-                marginLeft: "40px",
-                flexDirection: "row",
-                gap: 2,
-              }}
-            >
-              {fbData.map((card, index) => (
-                <CardList key={index} {...card} />
-              ))}
-            </Stack>
-          </Box>
-          <Box
-            sx={{
-              width: "95%",
-              gap: 1,
-            }}
-          >
-            <Typography
-              variant="subtitle1"
-              fontWeight="bold"
-              className="text-purple-500"
-            >
-              Dịch vụ Tiktok
-            </Typography>
-            <Stack
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "flex-start",
-                marginLeft: "40px",
-                flexDirection: "row",
-                gap: 2,
-              }}
-            >
-              {tiktokData.map((card, index) => (
-                <CardList key={index} {...card} />
-              ))}
-            </Stack>
-          </Box>
-          <Box
-            sx={{
-              width: "95%",
-              gap: 1,
-            }}
-          >
-            <Typography
-              variant="subtitle1"
-              fontWeight="bold"
-              className="text-pink-500"
-            >
-              Dịch vụ Instagram
-            </Typography>
-            <Stack
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "flex-start",
-                marginLeft: "40px",
-                flexDirection: "row",
-                gap: 2,
-              }}
-            >
-              {instagramData.map((card, index) => (
-                <CardList key={index} {...card} />
-              ))}
-            </Stack>
+          <Box sx={{ width: "95%" }}>
+            <Box>
+              <CardList color="#74b9ff" title="Dịch vụ Facebook">
+                {fbData.map((card, index) => (
+                  <CustomCard key={index} {...card} />
+                ))}
+              </CardList>
+            </Box>
+            <Box>
+              <CardList color="#44bd32" title="Dịch vụ Tiktok">
+                {tiktokData.map((card, index) => (
+                  <CustomCard key={index} {...card} />
+                ))}
+              </CardList>
+            </Box>
+            <Box>
+              <CardList color="#fd79a8" title="Dịch vụ Instagram">
+                {instagramData.map((card, index) => (
+                  <CustomCard key={index} {...card} />
+                ))}
+              </CardList>
+            </Box>
           </Box>
           <Box
             sx={{

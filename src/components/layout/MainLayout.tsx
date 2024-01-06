@@ -11,6 +11,7 @@ import MenuListFake from "../MenuListUnLogin";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import LoginIcon from "@mui/icons-material/Login";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 const { Header, Footer, Sider } = Layout;
 
 type LayoutProps = {
@@ -61,14 +62,14 @@ export default function MainLayout({
                   href="/after-login"
                   style={{ fontSize: isMediumScreen ? "14px" : "18px" }}
                 >
-                  Buffacc.vn
+                  Buff Like 24/7
                 </Link>
               ) : (
                 <Link
                   href="/"
                   style={{ fontSize: isMediumScreen ? "14px" : "18px" }}
                 >
-                  Buffacc.vn
+                  Buff Like 24/7
                 </Link>
               )}
             </div>
@@ -175,6 +176,16 @@ export default function MainLayout({
                     }}
                   >
                     Bảng giá
+                  </ButtonCustom>
+                  <ButtonCustom
+                    variant="outlined"
+                    color="secondary"
+                    startIcon={<AccountBalanceIcon />}
+                    onClick={() => {
+                      router.push("/cash-in");
+                    }}
+                  >
+                    Nạp tiền
                   </ButtonCustom>
                   <ButtonCustom
                     variant="outlined"

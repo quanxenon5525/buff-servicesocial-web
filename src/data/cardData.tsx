@@ -205,3 +205,163 @@ export const instagramData = [
     href: "like-post-fb",
   },
 ];
+
+export const fbData2 = [
+  {
+    title: "TĂNG LIKE BÀI VIẾT FB",
+    description: "Like bất kì bài viết công khai nào với chi phí rẻ",
+    icon: <ThumbUpOffAltIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG SHARE BÀI VIẾT FB",
+    description: "Bài viết tiếp cận được nhiều người hơn",
+    icon: <ReplyIcon />,
+    href: "login",
+  },
+  {
+    title: "TĂNG COMMENT FB",
+    description: "Seeding bán hàng, tăng độ uy tín cho bài viết",
+    icon: <CommentIcon />,
+    href: "login",
+  },
+  {
+    title: "TĂNG LIKE CHO BÌNH LUẬN FB",
+    description: "Hack like cmt cho các cuộc bình chọn",
+    icon: <ThumbUpOffAltIcon />,
+    href: "login",
+  },
+  {
+    title: "TĂNG VIEW LIVESTREAM INSTAGRAM",
+    description: "Thêm hàng ngàn lượt view livestream tạo thương hiệu",
+    icon: <VisibilityIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG FOLLOWER CHO FB",
+    description: "Cảm giác làm người nổi tiếng với hàng ngàn người theo dõi",
+    icon: <HowToRegIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG LIKE, FOLLOWER PAGE",
+    description:
+      "Tăng độ uy tín cho thương hiệu và nhận diện thương hiệu qua page",
+    icon: <FacebookIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG MEMBER CHO GROUP",
+    description: "Tăng độ tin cậy uy tín cho group của bạn",
+    icon: <GroupsIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG VIEW VIDEO FB",
+    description: "Tăng độ tương tác, tăng sự chất lượng cho video",
+    icon: <OndemandVideoIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG REVIEW FANPAGE",
+    description: "Tăng độ uy tín, bán hàng dễ dàng hơn",
+    icon: <StarBorderIcon />,
+    href: "/login",
+  },
+  {
+    title: "VIPLIKE - LIKE THÁNG",
+    description: "Viplike - cài một lần sử dụng 1 tháng",
+    icon: <FacebookIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG VIEW STORY",
+    description: "Thêm ngàn lượt xem Story của bạn",
+    icon: <VideocamIcon />,
+    href: "/login",
+  },
+  {
+    title: "TÍCH XANH FACEBOOK",
+    description: "Lên tích xanh cá nhân",
+    icon: <FacebookIcon />,
+    href: "/login",
+  },
+];
+
+export const tiktokData2 = [
+  {
+    title: "TĂNG LIKE TIM TIKTOK",
+    description: "Nhiều tim nhiều tương tác",
+    icon: <SimpleIconsTiktok />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG FOLLOW TIM TIKTOK",
+    description: "Follow tăng độ trust",
+    icon: <SimpleIconsTiktok />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG VIEW LIVE TIKTOK",
+    description: "Tạo hiêu ứng tuyệt vời",
+    icon: <SimpleIconsTiktok />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG VIEW TIKTOK",
+    description: "Video triệu view không còn xa lạ",
+    icon: <SimpleIconsTiktok />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG COMMENT TIKTOK",
+    description: "Nhiều comment, nhiều tương tác",
+    icon: <SimpleIconsTiktok />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG SAVE TIKTOK",
+    description: "Tăng độ trust cho video của bạn",
+    icon: <SimpleIconsTiktok />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG SHARE TIKTOK",
+    description: "Tăng độ tin cậy cho nick cá nhân",
+    icon: <SimpleIconsTiktok />,
+    href: "/login",
+  },
+];
+
+export const instagramData2 = [
+  {
+    title: "TĂNG FOLLOW INSTAGRAM",
+    description: "Foolow tăng độ trust cho nick cá nhân",
+    icon: <InstagramIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG VIEW INSTAGRAM",
+    description: "View instagram với chi phí cực rẻ",
+    icon: <VideocamIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG LIKE, TIM INSTAGRAM",
+    description: "Like instagram với chi phí cực rẻ",
+    icon: <FavoriteIcon />,
+    href: "/login",
+  },
+  {
+    title: "TĂNG COMMENT INSTAGRAM",
+    description: "Seeding bán hàng, tăng độ uy tín cho bài viết",
+    icon: <CommentIcon />,
+    href: "/login",
+  },
+  {
+    title: "VIP LIKE - GÓI THÁNG",
+    description: "Viplike instagram - cài một lần sử dụng 1 tháng",
+    icon: <FavoriteIcon />,
+    href: "/login",
+  },
+];

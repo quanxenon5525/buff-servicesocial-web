@@ -1,41 +1,45 @@
-import { useMediaQuery } from "@mui/material";
-import { Card } from "antd";
-import Link from "next/link";
-import { FC } from "react";
-interface CustomCardProps {
+import { Stack, Typography, createTheme, useMediaQuery } from "@mui/material";
+import React from "react";
+
+type CardList = {
   title: string;
-  description: string;
-  href: string;
-  icon?: any;
-}
-
-export const CardList: FC<CustomCardProps> = ({
-  title,
-  description,
-  href,
-  icon,
-}) => {
-  const { Meta } = Card;
-  const sm = useMediaQuery("(min-width: 750px)");
-  const cardWidth = sm ? 300 : 200;
-  const responsive = sm ? 40 : 0;
-
-  return (
-    <Link href={href}>
-      <Card
-        style={{
-          width: cardWidth,
-          height: 150,
-          marginTop: 16,
-          marginLeft: responsive,
-          backgroundColor: "#00a680",
-        }}
-        hoverable
-      >
-        <Meta avatar={icon} title={title} description={description} />
-      </Card>
-    </Link>
-  );
+  children: any;
+  color?: any;
 };
 
-export default CardList;
+// const theme = createTheme({
+//   breakpoints: {
+//     values: {
+//       xs: 0,
+//       sm: 600,
+//       md: 900,
+//       lg: 1200,
+//       xl: 1536,
+//     },
+//   },
+// });
+
+export default function CardList(props: CardList) {
+  const { title, children, color } = props;
+  const md = useMediaQuery("(min-width: 750px)");
+  const sm = useMediaQuery("(max-with: 375px)");
+  const responsive = md ? (md ? "150px" : "0") : !sm ? "35px" : "0";
+  return (
+    <div style={{ marginTop: 15 }}>
+      <Typography variant="subtitle1" fontWeight="bold" sx={{ color: color }}>
+        {title}
+      </Typography>
+      <Stack
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          flexDirection: "row",
+          gap: 2,
+          marginLeft: responsive,
+        }}
+      >
+        {children}
+      </Stack>
+    </div>
+  );
+}
