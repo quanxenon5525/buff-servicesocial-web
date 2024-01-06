@@ -6,6 +6,7 @@ import { Tabs, TabsProps } from "antd";
 import Link from "next/link";
 import Information from "./Information";
 import Orders from "./Orders";
+import HistoryTransaction from "./HistoryTransaction";
 
 const items: TabsProps["items"] = [
   {
@@ -21,7 +22,7 @@ const items: TabsProps["items"] = [
   {
     key: "3",
     label: "Lịch sử giao dịch",
-    children: "Content of Tab Pane 3",
+    children: <HistoryTransaction />,
   },
 ];
 
