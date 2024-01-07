@@ -5,6 +5,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import { Box } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import RuleCashin from "./RuleCashin";
 
 export default function Cashin() {
   return (
@@ -32,8 +33,10 @@ export default function Cashin() {
               "https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.15752-9/406045226_390198513670206_8047584056241224134_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=3_XeT0_jK-wAX_-Ckt6&_nc_ht=scontent.fsgn5-2.fna&oh=03_AdTj1MfxlB0bzpFzs0KzvZZ05LuNrU6zVAsGDvlHdKP7Pw&oe=65B5D719"
             }
           />
+          <Box sx={{ width: "95%", color: "black" }}>
+            <RuleCashin />
+          </Box>
         </div>
-        <Box>asdoksodkaodkaokdss</Box>
       </Dashboard>
     </MainLayout>
   );

@@ -84,14 +84,12 @@ export default function MainLayout({
                   }}
                 >
                   <Typography variant="body2" fontWeight="bold">
-                    <Link href="/user">Hi Nhân</Link>
+                    <Link href="/user">Hi, Nhân</Link>
                   </Typography>
                   <Box>
                     <Typography variant="caption">Thành viên cấp 10</Typography>
                     {" - "}
-                    <Typography variant="caption">
-                      Số dư: 999.999.999đ
-                    </Typography>
+                    <Typography variant="caption">Số dư: 999.999đ</Typography>
                   </Box>
                 </Box>
                 <MenuList />

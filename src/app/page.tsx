@@ -65,12 +65,12 @@ export default function Home() {
               className="text-black"
               fontWeight="bold"
             >
-              BuffAcc.vn - Ổn định, hiệu quả, lâu dài
+              BuffLike24/7.vn - Ổn định, hiệu quả, lâu dài
             </Typography>
             <Typography variant="caption" className="text-black">
-              BuffAcc.vn hoạt động từ năm 2018 đến nay, với phương châm xây dựng
-              một hệ thống mang đến lợi ích cho người sử dụng. Chúng tôi chỉ
-              cung cấp các dịch vụ như tăng like, comment, share, view, tăng
+              BuffLike24/7.vn hoạt động từ năm 2018 đến nay, với phương châm xây
+              dựng một hệ thống mang đến lợi ích cho người sử dụng. Chúng tôi
+              chỉ cung cấp các dịch vụ như tăng like, comment, share, view, tăng
               mắt, likepage, follow, Facebook, Tiktok, Instagram, Shopee,
               Youtube...và một số dịch vụ khác để hỗ trợ cá nhân được nhiều
               tương tác hơn, các shop bán hàng tốt và hiệu quả hơn.
@@ -102,7 +102,7 @@ export default function Home() {
                 className="text-black"
                 fontWeight="bold"
               >
-                NHÂN PHẠM
+                BUFF LIKE 24/7
               </Typography>
             </Typography>
           </Box>
@@ -135,6 +135,7 @@ export default function Home() {
           </Box>
           <Box
             sx={{
+              marginTop: 5,
               width: "95%",
               gap: 1,
             }}
