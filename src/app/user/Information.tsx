@@ -128,7 +128,7 @@ export default function Information() {
                 }}
                 htmlType="submit"
               >
-                Cập nhật thông tin
+                `Cập nhật` thông tin
               </Button>
             </Form.Item>
           </Form>

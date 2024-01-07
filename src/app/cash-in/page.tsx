@@ -5,7 +5,9 @@ import MainLayout from "@/components/layout/MainLayout";
 import { Box } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import MethodCashin from "./MethodCashin";
 import RuleCashin from "./RuleCashin";
+import SupportCashin from "./SupportCashin";
 
 export default function Cashin() {
   return (
@@ -34,6 +36,8 @@ export default function Cashin() {
             }
           />
           <Box sx={{ width: "95%", color: "black" }}>
+            <MethodCashin />
+            <SupportCashin />
             <RuleCashin />
           </Box>
         </div>
