@@ -15,7 +15,18 @@ export default function Rules() {
           { title: "Quy định chung" },
         ]}
       >
-        <Box>Chua co gi</Box>
+        <Box
+          sx={{
+            color: "black",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h6" fontWeight="bold">
+            Quy định và Điều khoản
+          </Typography>
+        </Box>
       </Dashboard>
     </MainLayout>
   );
