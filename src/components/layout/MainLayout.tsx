@@ -223,8 +223,12 @@ export default function MainLayout({
                 </Typography>
               </Typography>
               <Typography variant="caption" className="text-black">
-                BuffAcc.vn | Điều khoản & Quy định | Chính sách bảo mật | Liên
-                hệ
+                BuffLike24/7.vn |{" "}
+                <Link href={"/cash-in/rules"}>Điều khoản & Quy định</Link> |
+                Chính sách bảo mật |{" "}
+                <Link href={"https://www.facebook.com/thanhnhan28101"}>
+                  Liên hệ
+                </Link>
               </Typography>
             </Footer>
           </Layout>

@@ -2,9 +2,8 @@
 import BoxAvatar from "@/components/BoxAvatar";
 import Dashboard from "@/components/layout/Dashboard";
 import MainLayout from "@/components/layout/MainLayout";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Link from "next/link";
-import React from "react";
 import MethodCashin from "./MethodCashin";
 import RuleCashin from "./RuleCashin";
 import SupportCashin from "./SupportCashin";
@@ -37,6 +36,15 @@ export default function Cashin() {
           />
           <Box sx={{ width: "95%", color: "black" }}>
             <MethodCashin />
+            <Typography
+              variant="body2"
+              sx={{ color: "black", marginTop: 5, marginBottom: 5 }}
+            >
+              Quy định chung về dịch vụ sử dụng đọc tại:{" "}
+              <Link style={{ fontWeight: "bold" }} href="/cash-in/rules">
+                QUY ĐỊNH BUFFLIKE 24/7
+              </Link>
+            </Typography>
             <SupportCashin />
             <RuleCashin />
           </Box>
