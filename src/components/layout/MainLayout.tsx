@@ -204,25 +204,17 @@ export default function MainLayout({
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                position: "fixed",
                 bottom: 0,
                 width: "100%",
-                height: 75,
+                height: 0,
                 backgroundColor: "#e8e8e8",
                 textAlign: "center",
               }}
             >
-              <Typography variant="caption" className="text-black">
-                Hệ thống hoạt động 24/7. NV hỗ trợ 09-18h từ T2-T7 Dev by{" "}
-                <Typography
-                  variant="caption"
-                  className="text-black"
-                  fontWeight="bold"
-                >
-                  Xeno
-                </Typography>
+              <Typography variant="caption" className="text-black text-xs">
+                Hệ thống hoạt động 24/7. NV hỗ trợ 09-18h từ T2-T7
               </Typography>
-              <Typography variant="caption" className="text-black">
+              <Typography variant="caption" className="text-black text-xs	">
                 BuffLike24/7.vn |{" "}
                 <Link href={"/cash-in/rules"}>Điều khoản & Quy định</Link> |
                 Chính sách bảo mật |{" "}
