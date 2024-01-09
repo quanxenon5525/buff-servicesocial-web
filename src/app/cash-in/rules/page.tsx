@@ -133,7 +133,7 @@ export default function Rules() {
                   khách hàng lắm được rõ những quyền lợi của mình khi mua like
                   tại dịch vụ của chúng tôi. để khách hàng có thể cân nhắc chọn
                   lựa trước khi đặt hàng. Gần đây chúng tôi được 1 số hách hàng
-                  phản ánh có 1 số dv hay "nói hay" "nói quá" cốt để khách làm
+                  phản ánh có 1 số dv hay (nói hay) (nói quá) cốt để khách làm
                   rồi làm xong ko thì không có trách nhiệm, chúng tôi thấy rất
                   bức xúc vì điều này .
                 </li>
